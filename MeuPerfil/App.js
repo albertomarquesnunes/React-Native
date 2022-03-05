@@ -18,7 +18,7 @@ class App extends Component{
             
         <Image
           source={require ('./assets/foto.jpg')}
-          style={{ width: 200, height: 200, alignSelf:'center', marginTop:10}}
+          style={{ width: 150, height: 150, alignSelf:'center', marginTop:10}}
          
         />
         <Text style={{ fontSize: 25, margin: 15}}>Dados Pessoais</Text>
