@@ -9,11 +9,22 @@ export default function Tarefas() {
   const [loading, setLoading] = useState(true)
  
   useEffect(async () => {
-    await carregarTarefas()
-    setLoading(false)
-  }, [])
+    await carregarTarefas();
+    setLoading(false);
+    const unsubscribe = navigation.addListener('focus', async() => {
+      setTarefas([]);
+      setLoading(true);
+      await carregarTarefas();
+      setLoading(false);
+    });
+    return () => {
+      unsubscribe;
+     
+    };
+  }, [navigation])
  
   const carregarTarefas = async () => {
+   
     const response = await api.get('/tasks')
     setTarefas(response.data)
   }

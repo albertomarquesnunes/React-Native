@@ -16,8 +16,7 @@ function Card({data, funcCarregarTarefas}){
   const navigation = useNavigation();
  
   async function irFormulario(){
-    console.log('ir formulario: '+id);
-      navigation.navigate('Formulario', { id: id, title: title, description: description, atualizarLista: funcCarregarTarefas});
+        navigation.navigate('Formulario', { id: id, title: title, description: description, atualizarListaEdita: funcCarregarTarefas});
   }
  
  
